@@ -1,0 +1,9 @@
+# Base java:8
+FROM java:8
+
+# Add jar to container
+ADD /target/example*.jar javaopts.jar
+
+# Entry with exec
+ENTRYPOINT exec java $JAVA_OPTS  -jar /javaopts.jar
+
